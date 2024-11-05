@@ -1,0 +1,92 @@
+body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 35px;
+            margin: 20px 0;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #1f1d1d;
+            text-align: left;
+            font-family: cursive;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #131212;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #3b3c3d;
+            outline: none;
+        }
+
+        button {
+            background: #000000;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background: #f4f6f7bb;
+            border: 2px solid black;
+            color: black;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+                width: 90%;
+            }
+
+
+        }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortest Path Finder</title>
+    <link rel="stylesheet" href="static\style.css">
+
+</head>
+
+<body>
+    <h1>Find Shortest between cities in India ✈️</h1>
+    <form id="routeForm">
+        <label for="source">Source City:</label>
+        <input type="text" id="source" name="source" required>
+        <br>
+        <label for="destination">Destination City:</label>
+        <input type="text" id="destination" name="destination" required>
+        <br>
+        <button type="submit">Find Shortest Route</button>
+    </form>
+    <h2 id="result"></h2>
+
+    <script>
+        document.getElementById('routeForm').addEventListener('submit', async function (event) {
+            event.preventDefault();
+            const source = document.getElementById('source').value;
+            const destination = document.getElementById('destination').value;
+
+            const response = await fetch('/find-route', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ source, destination })
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerText = `Shortest distance: ${result.distance}, Path: ${result.path}`;
+        });
+
+
+    </script>
+</body>
+
+</html>
